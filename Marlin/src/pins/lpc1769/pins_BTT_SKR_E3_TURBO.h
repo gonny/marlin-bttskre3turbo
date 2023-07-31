@@ -254,18 +254,24 @@
     #define LCD_PINS_D7              EXP1_01_PIN
     #define ADC_KEYPAD_PIN                 P1_23  // Repurpose servo pin for ADC - CONNECTING TO 5V WILL DAMAGE THE BOARD!
 
-  #elif EITHER(MKS_MINI_12864, ENDER2_STOCKDISPLAY)
+  #elif EITHER(FYSETC_MINI_12864_2_1, BTT_MINI_12864_V1)
 
-    #define BTN_EN1                  EXP1_03_PIN
-    #define BTN_EN2                  EXP1_05_PIN
+    #define BTN_EN1                  EXP1_06_PIN //EXP1_03_PIN
+    #define BTN_EN2                  EXP1_01_PIN //EXP1_05_PIN
     #define BTN_ENC                  EXP1_02_PIN
+    #define BEEPER_PIN               -1
 
-    #define DOGLCD_CS                EXP1_07_PIN
-    #define DOGLCD_A0                EXP1_06_PIN
-    #define DOGLCD_SCK               EXP1_01_PIN
+    #define DOGLCD_CS                EXP1_03_PIN //EXP1_07_PIN
+    #define DOGLCD_A0                EXP1_05_PIN //EXP1_06_PIN
+    #define DOGLCD_SCK               EXP1_07_PIN //EXP1_01_PIN
     #define DOGLCD_MOSI              EXP1_08_PIN
     #define FORCE_SOFT_SPI
     #define LCD_BACKLIGHT_PIN              -1
+
+    //#define LCD_CONTRAST              255
+    #define LCD_CONTRAST_MIN                 127
+    #define LCD_CONTRAST_INIT                200
+    #define LCD_CONTRAST_MAX                   255
 
   #else
 
